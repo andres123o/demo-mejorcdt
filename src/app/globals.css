@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+/*
+  Sistema de diseño de mejorcdt.com (tokens --mcdt-*), leído de su hoja de estilos el 14 oct 2026.
+  Solo modo claro, como el original.
+*/
+:root {
+  /* Marca */
+  --marca: #111bff; /* --mcdt-indigo-900 / --color-blue-100 */
+  --marca-hover: #0d15cc; /* --mcdt-indigo-950 */
+  --marca-presionada: #070b60; /* --color-blue-180 */
+  --marca-suave: #e7e8ff; /* --mcdt-indigo-100 */
+  --marca-fondo: #f8f8ff; /* --mcdt-indigo-50 */
+  --marca-media: #6b71ff; /* --mcdt-indigo-600 */
+
+  /* Neutros */
+  --fondo: #ffffff;
+  --lienzo: #f7f7fc; /* fondo del panel: entre el blanco y su índigo 50 */
+  --fondo-apagado: #f1f1f1; /* --mcdt-neutral-100 */
+  --texto: #252525; /* --mcdt-neutral-800 */
+  --texto-secundario: #525252; /* --mcdt-neutral-600 */
+  --tenue: #868484; /* --mcdt-neutral-400 */
+  --borde: #d9d9d9; /* --mcdt-neutral-200 */
+  --borde-fuerte: #adadad; /* --mcdt-neutral-300 */
+  --linea: rgb(37 37 37 / 0.08);
+
+  /* Estados */
+  --exito: #28ca6b;
+  --exito-fondo: #e9f9ef;
+  --exito-texto: #157f47;
+  --aviso: #fdc608;
+  --aviso-fondo: #fff9e6;
+  --aviso-texto: #8a6a00;
+  --error: #fc7151;
+  --error-fondo: #fef1eb;
+  --error-texto: #c2371a;
+  --info: #41b6d8;
+  --info-fondo: #ecf7fb;
+  --info-texto: #1f7e9b;
+  --turbo-verde: #03cb6a;
+  --turbo-naranja: #ff9a01;
+
+  /* Sombras y movimiento */
+  --sombra-xs: 0 1px 2px rgb(37 37 37 / 5%);
+  --sombra-sm: 0 8px 24px rgb(37 37 37 / 6%);
+  --sombra-md: 0 16px 40px rgb(17 27 255 / 8%);
+  --sombra-lg: 0 24px 64px rgb(30 30 30 / 16%);
+  --anillo-foco: 0 0 0 3px rgb(17 27 255 / 22%);
+}
+
+@theme inline {
+  --color-marca: var(--marca);
+  --color-marca-hover: var(--marca-hover);
+  --color-marca-presionada: var(--marca-presionada);
+  --color-marca-suave: var(--marca-suave);
+  --color-marca-fondo: var(--marca-fondo);
+  --color-marca-media: var(--marca-media);
+  --color-fondo: var(--fondo);
+  --color-fondo-apagado: var(--fondo-apagado);
+  --color-texto: var(--texto);
+  --color-texto-secundario: var(--texto-secundario);
+  --color-tenue: var(--tenue);
+  --color-borde: var(--borde);
+  --color-borde-fuerte: var(--borde-fuerte);
+  --color-linea: var(--linea);
+  --color-exito: var(--exito);
+  --color-exito-fondo: var(--exito-fondo);
+  --color-exito-texto: var(--exito-texto);
+  --color-aviso: var(--aviso);
+  --color-aviso-fondo: var(--aviso-fondo);
+  --color-aviso-texto: var(--aviso-texto);
+  --color-error: var(--error);
+  --color-error-fondo: var(--error-fondo);
+  --color-error-texto: var(--error-texto);
+  --color-info: var(--info);
+  --color-info-fondo: var(--info-fondo);
+  --color-info-texto: var(--info-texto);
+  --color-turbo-verde: var(--turbo-verde);
+  --color-turbo-naranja: var(--turbo-naranja);
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, monospace;
+  /* Radios del original: tarjeta 1.5rem, bloque 1rem, control .75rem, input .5rem, botón en píldora */
+  --radius-tarjeta: 1.5rem;
+  --radius-bloque: 1rem;
+  --radius-control: 0.75rem;
+  --radius-input: 0.5rem;
+  --shadow-xs: var(--sombra-xs);
+  --shadow-sm: var(--sombra-sm);
+  --shadow-md: var(--sombra-md);
+  --shadow-lg: var(--sombra-lg);
+  --ease-mcdt: cubic-bezier(0.22, 1, 0.36, 1);
+  --color-lienzo: var(--lienzo);
+  --animate-entrar: entrar 240ms cubic-bezier(0.22, 1, 0.36, 1);
+  --animate-deslizar: deslizar 240ms cubic-bezier(0.22, 1, 0.36, 1);
+  --animate-aparecer: aparecer 160ms ease-out;
+}
+
+@keyframes deslizar {
+  from {
+    transform: translateX(28px);
+    opacity: 0;
+  }
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes entrar {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+html {
+  color-scheme: light; /* el original es solo claro */
+  background: var(--fondo);
+}
+
+body {
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: #f3f3f7;
+}
