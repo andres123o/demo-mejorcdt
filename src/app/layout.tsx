@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
+import { Caveat, JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
 // Misma tipografía que mejorcdt.com.
@@ -16,6 +16,13 @@ const jetbrains = JetBrains_Mono({
   weight: ["500", "600"],
 });
 
+// Letra a mano para las etiquetas "Mi ahorro se llama…" del correo, como las de su campaña.
+const caveat = Caveat({
+  variable: "--font-mano",
+  subsets: ["latin"],
+  weight: ["600"],
+});
+
 export const metadata: Metadata = {
   title: "Motor de activación para MejorCDT",
   description: "Prototipo independiente de Andrés Olaya. No es un sitio oficial de MejorCDT.",
@@ -24,7 +31,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="es" className={`${jakarta.variable} ${jetbrains.variable} h-full antialiased`}>
+    <html lang="es" className={`${jakarta.variable} ${jetbrains.variable} ${caveat.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

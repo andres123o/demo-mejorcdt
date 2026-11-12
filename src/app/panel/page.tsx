@@ -18,7 +18,7 @@ async function leerHora() {
 async function Datos({ searchParams }: { searchParams: PageProps<"/panel">["searchParams"] }) {
   const { vista } = await searchParams;
   const ahora = await leerHora();
-  const inicial = VISTAS.some(([k]) => k === vista) ? (vista as Vista) : "resumen";
+  const inicial = VISTAS.some(([k]) => k === vista) ? (vista as Vista) : "propuestas";
   return <Panel ahora={ahora} inicial={inicial} />;
 }
 
